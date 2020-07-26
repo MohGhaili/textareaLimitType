@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    
+    <script>
+      var i = 0;
+      var j = $('#counter').val();
+      $(document).ready(function(){
+        $("#counter").keyup(function(evt){
+          i++;
+          j = $('#counter').val().length;
+          var entered = 4 - j;
+          if(entered >= 0) {
+            $("span").text(entered);
+            $(".helper").text("");
+          } else {
+            this.value = this.value.substring(0, 4);
+            $(".helper").text("You have exceeded the maximum char length.");
+          }
+        });
+      });
+
+      
+      </script>   
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-group col-md-6">
+      <label for="counter"></label>
+      <textarea class="form-control" name="counter" id="counter" rows="3"></textarea>
+      <p class="form-text text-muted">
+        Content limited to 4 char. Remaining: <span>4</span>
+      </p>
+      <small class="helper text-danger" ></small>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+</html>
